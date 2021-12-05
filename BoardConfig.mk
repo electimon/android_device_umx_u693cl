@@ -3,8 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
-DEVICE_PATH := device/nubia/TP1803
+BUILD_BROKEN_DUP_RULES := true
+DEVICE_PATH := device/umx/u693cl
 
 # Architecture
 TARGET_ARCH := arm64
@@ -29,16 +29,15 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := TP1803_defconfig
-TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
+TARGET_KERNEL_CLANG_COMPILE := false
+TARGET_KERNEL_CONFIG := umx_defconfig
+TARGET_KERNEL_SOURCE := kernel/umx/msm8937
 
 BOARD_KERNEL_CMDLINE := \
+    androidboot.bootdevice=7824900.sdhci \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
-    androidboot.usbcontroller=a600000.dwc3 \
-    console=ttyMSM0,115200n8 \
-    earlycon=msm_geni_serial,0xa90000 \
+    androidboot.usbconfigfs=true \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
     service_locator.enable=1
@@ -65,7 +64,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
-TARGET_BOARD_PLATFORM := msmnile
+TARGET_BOARD_PLATFORM := msm8937
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -76,7 +75,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Screen density
-TARGET_SCREEN_DENSITY := 480
+TARGET_SCREEN_DENSITY := 160
 
 # Inherit from proprietary files
-include vendor/nubia/TP1803/BoardConfigVendor.mk
+#include vendor/umx/u693cl/BoardConfigVendor.mk

@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=TP1803
-VENDOR=nubia
+DEVICE=u693cl
+VENDOR=umx
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

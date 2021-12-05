@@ -8,16 +8,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from TP1803 device
-$(call inherit-product, device/nubia/TP1803/device.mk)
+# Inherit from u693cl device
+$(call inherit-product, device/umx/u693cl/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_BRAND := Nubia
-PRODUCT_DEVICE := TP1803
-PRODUCT_MANUFACTURER := Nubia
-PRODUCT_MODEL := Mini 5G
-PRODUCT_NAME := lineage_TP1803
+PRODUCT_BRAND := UMX
+PRODUCT_DEVICE := u693cl
+PRODUCT_MANUFACTURER := UMX
+PRODUCT_MODEL := U693CL
+PRODUCT_NAME := lineage_u693cl
 
-PRODUCT_GMS_CLIENTID_BASE := android-nubia
+PRODUCT_GMS_CLIENTID_BASE := android-umx

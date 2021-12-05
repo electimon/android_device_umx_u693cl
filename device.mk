@@ -12,11 +12,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Recovery
 PRODUCT_PACKAGES += \
-    init.recovery.qcom.rc
+    init.recovery.qcom.rc \
+    log.sh
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Call the proprietary setup
-$(call inherit-product, vendor/nubia/TP1803/TP1803-vendor.mk)
+#$(call inherit-product, vendor/umx/u693cl/u693cl-vendor.mk)
